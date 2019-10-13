@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on TheLoneBrit101</title>
-    <link>http://localhost:1313/pt-br/tags/</link>
+    <link>https://at8865.github.io/pt-br/tags/</link>
     <description>Recent content in Tags on TheLoneBrit101</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	<atom:link href="http://localhost:1313/pt-br/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://at8865.github.io/pt-br/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
