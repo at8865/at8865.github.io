@@ -6,9 +6,31 @@
     <description>Recent content on André Tipping</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Sun, 13 Oct 2019 20:44:17 +0100</lastBuildDate>
     
 	<atom:link href="https://at8865.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About</title>
+      <link>https://at8865.github.io/about/</link>
+      <pubDate>Sun, 13 Oct 2019 20:44:17 +0100</pubDate>
+      
+      <guid>https://at8865.github.io/about/</guid>
+      <description>I am an aspiring Data Scientist, with a lot of cross-industry experience: oil &amp;amp; gas, steel, and software.
+My background is in engineering, I have an BEng in Mechanical Engineering and a MSc in Petroleum Engineering. So you could say that I&amp;rsquo;ve got a pretty solid technical base to work with! I decided to take up the Data Science Specialisation on Coursera in early 2019.
+For now I am working on my predictive models.</description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>https://at8865.github.io/projects/</link>
+      <pubDate>Wed, 09 Oct 2019 21:07:31 +0100</pubDate>
+      
+      <guid>https://at8865.github.io/projects/</guid>
+      <description>* Data Science Capstone Text Predictor: http://rpubs.com/TheLoneBrit101/503450 Capstone of Data Science Specialization by John Hopkins University via Coursera sponsored by Swiftkey
+* Analysis of Most Harmful US Storm Events: http://rpubs.com/TheLoneBrit101/471344 This project involves exploring the U.S. National Oceanic and Atmospheric Administration’s (NOAA) storm database. This database tracks characteristics of major storms and weather events in the United States, including when and where they occur, as well as estimates of any fatalities, injuries, and property damage.</description>
+    </item>
     
   </channel>
 </rss>
