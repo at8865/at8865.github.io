@@ -3,6 +3,20 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://at8865.github.io/pt-br/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://at8865.github.io/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt-br"
+                href="https://at8865.github.io/pt-br/"
+                />
+  </url>
+  
+  <url>
     <loc>https://at8865.github.io/pt-br/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -41,20 +55,6 @@
                 rel="alternate"
                 hreflang="pt-br"
                 href="https://at8865.github.io/pt-br/tags/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://at8865.github.io/pt-br/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://at8865.github.io/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="https://at8865.github.io/pt-br/"
                 />
   </url>
   
