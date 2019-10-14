@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="André Carlo Tipping">
+    <meta name="description" content="André&#39;s personal website">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Creating a static website using Hugo and hosting it on Github"/>
+<meta name="twitter:description" content="I&rsquo;m going to lay it out here, the steps I took to create this website and then host it on github, as the official guide isn&rsquo;t hugely clear. I am going to split this post into two sections: creation of the site, and then deploying it to github.
+Creating the site The first step is to install Hugo. I&rsquo;m running Linux-Mint so I used the following in the command line:"/>
+
+    <meta property="og:title" content="Creating a static website using Hugo and hosting it on Github" />
+<meta property="og:description" content="I&rsquo;m going to lay it out here, the steps I took to create this website and then host it on github, as the official guide isn&rsquo;t hugely clear. I am going to split this post into two sections: creation of the site, and then deploying it to github.
+Creating the site The first step is to install Hugo. I&rsquo;m running Linux-Mint so I used the following in the command line:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://at8865.github.io/posts/setting-up-website/" />
+<meta property="article:published_time" content="2019-10-14T10:05:44+01:00" />
+<meta property="article:modified_time" content="2019-10-14T10:05:44+01:00" />
+
+
+    
+      <base href="https://at8865.github.io/posts/setting-up-website/">
+    
+    <title>
+  Creating a static website using Hugo and hosting it on Github · André Tipping
+</title>
+
+    
+      <link rel="canonical" href="https://at8865.github.io/posts/setting-up-website/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://at8865.github.io/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    
+    
+    <link rel="icon" type="image/png" href="https://at8865.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://at8865.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.58.3" />
+  </head>
+
+  <body class=" ">
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://at8865.github.io/">
+      André Tipping
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://at8865.github.io/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://at8865.github.io/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://at8865.github.io/projects/">Projects</a>
+          </li>
+        
+      
+      
+        
+        
+        
+          
+        
+          
+            
+              <li class="navigation-item menu-separator">
+                <span>|</span>
+              </li>
+              
+            
+            <li class="navigation-item">
+              <a href="https://at8865.github.io/pt-br/">Português</a>
+            </li>
+          
+        
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Creating a static website using Hugo and hosting it on Github</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2019-10-14T10:05:44&#43;01:00'>
+                October 14, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              3 minutes read
+            </span>
+          </div>
+          
+          
+        </div>
+      </header>
+
+      <div>
+        
+
+<p>I&rsquo;m going to lay it out here, the steps I took to create this website and then host it on github, as the official <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">guide</a> isn&rsquo;t hugely clear. I am going to split this post into two sections: creation of the site, and then deploying it to github.</p>
+
+<h1 id="creating-the-site">Creating the site</h1>
+
+<p>The first step is to install <a href="https://gohugo.io/getting-started/installing/">Hugo</a>.
+I&rsquo;m running Linux-Mint so I used the following in the command line:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">sudo apt-get install hugo</pre></div>
+<p>Now, you can go ahead and create a website using:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">hugo new site &lt;website-name&gt; # replace &lt;website-name&gt; to something of your choice</pre></div>
+<p>For the moment it&rsquo;s just a blank canvas so to change that a theme needs to be chosen.
+Navigating to (themes)[<a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a>] you can see a large collection of designs to choose from.</p>
+
+<p>After deciding on the theme you want, click on it. Click on the download button and you will be sent to its github page. I used (coder)[<a href="https://github.com/luizdepra/hugo-coder">https://github.com/luizdepra/hugo-coder</a>].</p>
+
+<p>Download the theme by performing the following:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">cd &lt;website-name&gt;
+
+git init
+git submodule add https://github.com/luizdepra/hugo-coder themes/coder
+cp themes/coder/exampleSite/config.toml</pre></div>
+<p>Open up <code>config.toml</code> in a text editor to customise the theme and start making alterations/additions eg. title</p>
+
+<p>Content can be created by using:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">hugo new posts/my-first-post.md</pre></div>
+<p>Opening up <code>my-first-post.md</code> will show something like this:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">---
+title: &#34;My First Post&#34;
+date: 2019-03-26T08:47:11+01:00
+draft: true
+---</pre></div>
+<p>Once you finish a post, update the header of the post to say draft: false, else your content will not get deployed!</p>
+
+<p>Now to see the result - in the terminal, type:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">hugo server # -D drafts enabled if you haven&#39;t updated your post headers</pre></div>
+<p>Navigate to your new site at <a href="http://localhost:1313/">http://localhost:1313/</a>.</p>
+
+<p>Make any other configurations or changes and your site will reflect them straight away.</p>
+
+<h1 id="deploying-the-site">Deploying the site</h1>
+
+<p>The first thing to do is create two new repositories in your Github account. The first <code>&lt;YOUR-PROJECT&gt;</code> to host your generated content, and the other <code>&lt;USERNAME&gt;.github.io</code> containing the fully rendered version of the website. Ensure that they&rsquo;re both empty. You can host on a User Page or on a Project Page; as this is my personal blog/portfolio, I went with the former.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">git clone &lt;YOUR-PROJECT-URL&gt; &amp;&amp; cd &lt;YOUR-PROJECT&gt;</pre></div>
+<p>Paste your existing Hugo project into a new local <code>&lt;YOUR-PROJECT&gt;</code> repository. Make sure your website works locally (hugo server).
+Once you are happy with the results:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Press Ctrl+C to kill the server
+Before proceeding run rm -rf public to completely remove the public directory</pre></div>
+<p>Open up <code>config.toml</code> and replace the baseURL from <code>&quot;https://example.org/&quot;</code> or <code>&quot;http://localhost:1313/&quot;</code> to the domain of your new website: <code>&quot;at8865.github.io&quot;</code> (in my case).</p>
+
+<p>Add a submodule so that the /public directory will have the github host repo as its origin:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">git submodule add -b master git@github.com:&lt;USERNAME&gt;/&lt;USERNAME&gt;.github.io.git public # change &lt;USERNAME&gt; and to https if preffered</pre></div>
+<p>Create a <code>deploy.sh</code> script and paste the following in it:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><span style="color:#0f0;font-weight:bold">#!/bin/sh
+</span><span style="color:#0f0;font-weight:bold"></span>
+<span style="color:#007f7f"># If a command fails then the deploy stops</span>
+<span style="color:#fff;font-weight:bold">set</span> -e
+
+<span style="color:#fff;font-weight:bold">printf</span> <span style="color:#0ff;font-weight:bold">&#34;\033[0;32mDeploying updates to GitHub...\033[0m\n&#34;</span>
+
+<span style="color:#007f7f"># Build the project.</span>
+hugo <span style="color:#007f7f"># if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`</span>
+
+<span style="color:#007f7f"># Go To Public folder</span>
+<span style="color:#fff;font-weight:bold">cd</span> public
+
+<span style="color:#007f7f"># Add changes to git.</span>
+git add .
+
+<span style="color:#007f7f"># Commit changes.</span>
+msg=<span style="color:#0ff;font-weight:bold">&#34;rebuilding site </span><span style="color:#fff;font-weight:bold">$(</span>date<span style="color:#fff;font-weight:bold">)</span><span style="color:#0ff;font-weight:bold">&#34;</span>
+<span style="color:#fff;font-weight:bold">if</span> [ -n <span style="color:#0ff;font-weight:bold">&#34;</span>$*<span style="color:#0ff;font-weight:bold">&#34;</span> ]; <span style="color:#fff;font-weight:bold">then</span>
+	msg=<span style="color:#0ff;font-weight:bold">&#34;</span>$*<span style="color:#0ff;font-weight:bold">&#34;</span>
+<span style="color:#fff;font-weight:bold">fi</span>
+git commit -m <span style="color:#0ff;font-weight:bold">&#34;</span>$msg<span style="color:#0ff;font-weight:bold">&#34;</span>
+
+<span style="color:#007f7f"># Push source and build repos.</span>
+git push origin master</pre></div>
+<p>In the command line, make it executable with <code>chmod +x deploy.sh</code>. Then run <code>./deploy.sh &quot;Your optional commit message&quot;</code>.
+Finally, commit the changes to <code>&lt;YOUR-PROJECT&gt;</code> repository as well. And voila, the website should be up and running at <code>https://&lt;USERNAME&gt;.github.io</code>!</p>
+
+      </div>
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yourdiscussshortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Place to organise my projects and thoughts.</p>
+    
+     © 2019
+    
+       · 
+      Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+    
+       · 
+      [<a href="https://github.com/luizdepra/hugo-coder/tree/"></a>]
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

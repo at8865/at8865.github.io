@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on André Tipping</title>
+    <link>https://at8865.github.io/posts/</link>
+    <description>Recent content in Posts on André Tipping</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 14 Oct 2019 10:05:44 +0100</lastBuildDate>
+    
+	<atom:link href="https://at8865.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Creating a static website using Hugo and hosting it on Github</title>
+      <link>https://at8865.github.io/posts/setting-up-website/</link>
+      <pubDate>Mon, 14 Oct 2019 10:05:44 +0100</pubDate>
+      
+      <guid>https://at8865.github.io/posts/setting-up-website/</guid>
+      <description>I&amp;rsquo;m going to lay it out here, the steps I took to create this website and then host it on github, as the official guide isn&amp;rsquo;t hugely clear. I am going to split this post into two sections: creation of the site, and then deploying it to github.
+Creating the site The first step is to install Hugo. I&amp;rsquo;m running Linux-Mint so I used the following in the command line:</description>
+    </item>
+    
+  </channel>
+</rss>
