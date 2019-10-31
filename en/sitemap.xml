@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://at8865.github.io/</loc>
-    <lastmod>2019-10-14T10:05:44+01:00</lastmod>
+    <lastmod>2019-10-31T00:06:19+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
@@ -18,12 +18,17 @@
   </url>
   
   <url>
-    <loc>https://at8865.github.io/posts/setting-up-website/</loc>
-    <lastmod>2019-10-14T10:05:44+01:00</lastmod>
+    <loc>https://at8865.github.io/posts/</loc>
+    <lastmod>2019-10-31T00:06:19+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://at8865.github.io/posts/</loc>
+    <loc>https://at8865.github.io/posts/setupgoogleanalytics/</loc>
+    <lastmod>2019-10-31T00:06:19+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://at8865.github.io/posts/setting-up-website/</loc>
     <lastmod>2019-10-14T10:05:44+01:00</lastmod>
   </url>
   

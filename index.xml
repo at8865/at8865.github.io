@@ -6,10 +6,20 @@
     <description>Recent content on André Tipping</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 14 Oct 2019 10:05:44 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 31 Oct 2019 00:06:19 +0000</lastBuildDate>
     
 	<atom:link href="https://at8865.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Setting up Google Analytics</title>
+      <link>https://at8865.github.io/posts/setupgoogleanalytics/</link>
+      <pubDate>Thu, 31 Oct 2019 00:06:19 +0000</pubDate>
+      
+      <guid>https://at8865.github.io/posts/setupgoogleanalytics/</guid>
+      <description>These are the steps I took to set up Google Analytics and link it to this website of mine.
+ The first thing to do is set up a Google Analytics account with your google account. From the resulting dashboard, click on &amp;lsquo;ADMIN&amp;rsquo; at the bottom left. With your account selected, expand Tracking Info under Property, and then click on Tracking Code. Your unique Tracking ID will be displayed. Open the config.</description>
+    </item>
     
     <item>
       <title>Creating a static website using Hugo and hosting it on Github</title>
@@ -40,7 +50,8 @@ For now I am working on my predictive models.</description>
       <guid>https://at8865.github.io/projects/</guid>
       <description>* Data Science Capstone Text Predictor: http://rpubs.com/TheLoneBrit101/503450 Capstone of Data Science Specialization by John Hopkins University via Coursera sponsored by Swiftkey
 * Analysis of EV impact on conventional fuels: http://rpubs.com/TheLoneBrit101/540345 A small 2-page analysis/thought-piece answering the question: to what extent will electric vehicles impact the demand for conventional fuels?
-* Analysis of Most Harmful US Storm Events: http://rpubs.com/TheLoneBrit101/471344 This project involves exploring the U.S. National Oceanic and Atmospheric Administration’s (NOAA) storm database.</description>
+* Dashboard of Retailer Analysis: https://thelonebrit101.shinyapps.io/Retailer_Analysis/ An analysis of transactional data of 6 fictitious retailers
+* Analysis of Most Harmful US Storm Events: http://rpubs.</description>
     </item>
     
   </channel>

@@ -6,10 +6,20 @@
     <description>Recent content in Posts on André Tipping</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 14 Oct 2019 10:05:44 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 31 Oct 2019 00:06:19 +0000</lastBuildDate>
     
 	<atom:link href="https://at8865.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Setting up Google Analytics</title>
+      <link>https://at8865.github.io/posts/setupgoogleanalytics/</link>
+      <pubDate>Thu, 31 Oct 2019 00:06:19 +0000</pubDate>
+      
+      <guid>https://at8865.github.io/posts/setupgoogleanalytics/</guid>
+      <description>These are the steps I took to set up Google Analytics and link it to this website of mine.
+ The first thing to do is set up a Google Analytics account with your google account. From the resulting dashboard, click on &amp;lsquo;ADMIN&amp;rsquo; at the bottom left. With your account selected, expand Tracking Info under Property, and then click on Tracking Code. Your unique Tracking ID will be displayed. Open the config.</description>
+    </item>
     
     <item>
       <title>Creating a static website using Hugo and hosting it on Github</title>
