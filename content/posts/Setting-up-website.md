@@ -61,50 +61,119 @@ Navigate to your new site at http://localhost:1313/.
 Make any other configurations or changes and your site will reflect them straight away.
 
 # Deploying the site # {#2}
-The first thing to do is create two new repositories in your Github account. The first `<YOUR-PROJECT>` to host your generated content, and the other `<USERNAME>.github.io` containing the fully rendered version of the website. Ensure that they're both empty. You can host on a User Page or on a Project Page; as this is my personal blog/portfolio, I went with the former.
 
-```
-git clone <YOUR-PROJECT-URL> && cd <YOUR-PROJECT>
-```
-Paste your existing Hugo project into a new local `<YOUR-PROJECT>` repository. Make sure your website works locally (hugo server).
-Once you are happy with the results:
+The recommended way to deploy a Hugo site to GitHub Pages is using GitHub Actions. This automates the build and deployment process whenever you push changes to your repository.
 
-    Press Ctrl+C to kill the server
-    Before proceeding run rm -rf public to completely remove the public directory
-  
-Open up `config.toml` and replace the baseURL from `"https://example.org/"` or `"http://localhost:1313/"` to the domain of your new website: `"at8865.github.io"` (in my case). 
+1.  **Create the GitHub Repository:**
+    Create a new **public** repository in GitHub named `<USERNAME>.github.io`, replacing `<USERNAME>` with your actual GitHub username. This specific naming convention tells GitHub you want to host a User Page.
 
-Add a submodule so that the /public directory will have the github host repo as its origin:
-```
-git submodule add -b master git@github.com:<USERNAME>/<USERNAME>.github.io.git public # change <USERNAME> and to https if preffered
-```
-Create a `deploy.sh` script and paste the following in it:
-```
-#!/bin/sh
+2.  **Push Your Hugo Site Source Code:**
+    Initialize a git repository in your local Hugo project folder (`<website-name>`) if you haven't already. Add all your project files (the `config.toml`, `content/`, `themes/`, `static/`, etc., **but not** the generated `public/` folder) to git. Set your new `<USERNAME>.github.io` repository as the remote origin and push your code to the `master` (or `main`) branch.
 
-# If a command fails then the deploy stops
-set -e
+    ```bash
+    cd <website-name> # Navigate to your Hugo project directory
+    # If you haven't already initialized git:
+    git init
+    git remote add origin https://github.com/<USERNAME>/<USERNAME>.github.io.git # Replace <USERNAME>
+    # Add all your files
+    git add .
+    # Commit the files
+    git commit -m "Initial commit of Hugo site source"
+    # Push to GitHub (use -u to set upstream for the first push)
+    git push -u origin master # Or 'main' if that's your default branch
+    ```
 
-printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
+3.  **Create the Workflow File:**
+    In your local project, create the directory path `.github/workflows/`. Inside the `workflows` directory, create a file named `hugo.yml` (or any other `.yml` name). Paste the following workflow content into this file:
 
-# Build the project.
-hugo # if using a theme, replace with `hugo -t <YOURTHEME>`
+    ```yaml
+    # Sample workflow for building and deploying a Hugo site to GitHub Pages
+    name: Deploy Hugo site to Pages
 
-# Go To Public folder
-cd public
+    on:
+      # Runs on pushes targeting the default branch
+      push:
+        branches: ["master"] # Or "main" if that's your default branch
 
-# Add changes to git.
-git add .
+      # Allows you to run this workflow manually from the Actions tab
+      workflow_dispatch:
 
-# Commit changes.
-msg="rebuilding site $(date)"
-if [ -n "$*" ]; then
-	msg="$*"
-fi
-git commit -m "$msg"
+    # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
 
-# Push source and build repos.
-git push origin master
-```
-In the command line, make it executable with `chmod +x deploy.sh`. Then run `./deploy.sh "Your optional commit message"`.
-Finally, commit the changes to `<YOUR-PROJECT>` repository as well. And voila, the website should be up and running at `https://<USERNAME>.github.io`!
+    # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+    # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+    concurrency:
+      group: "pages"
+      cancel-in-progress: false
+
+    # Default to bash
+    defaults:
+      run:
+        shell: bash
+
+    jobs:
+      # Build job
+      build:
+        runs-on: ubuntu-latest
+        env:
+          HUGO_VERSION: 0.128.0 # Specify your desired Hugo version
+        steps:
+          - name: Install Hugo CLI
+            run: |
+              wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+              && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+          - name: Install Dart Sass # Optional: If your theme uses Sass
+            run: sudo snap install dart-sass
+          - name: Checkout
+            uses: actions/checkout@v4
+            with:
+              submodules: recursive # Fetch theme submodules
+          # Optional: Setup Node if using npm packages (e.g., for PostCSS)
+          # - name: Setup Node
+          #   uses: actions/setup-node@v4
+          #   with:
+          #     node-version: '20' # Specify Node version
+          #     cache: 'npm'
+          # - name: Install Node.js dependencies
+          #   run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+          - name: Build with Hugo
+            env:
+              HUGO_ENVIRONMENT: production
+            run: |
+              hugo \
+                --minify \
+                --baseURL "/" # BaseURL is root for user pages
+          - name: Upload artifact
+            uses: actions/upload-pages-artifact@v3
+            with:
+              path: ./public # Hugo builds to 'public' directory by default
+
+      # Deployment job
+      deploy:
+        environment:
+          name: github-pages
+          url: ${{ steps.deployment.outputs.page_url }}
+        runs-on: ubuntu-latest
+        needs: build
+        steps:
+          - name: Deploy to GitHub Pages
+            id: deployment
+            uses: actions/deploy-pages@v4
+    ```
+
+    Commit this new workflow file and push it to GitHub:
+    ```bash
+    git add .github/workflows/hugo.yml
+    git commit -m "Add GitHub Actions workflow for Hugo deployment"
+    git push
+    ```
+
+4.  **Configure GitHub Pages Settings:**
+    Go to your repository settings on GitHub (`https://github.com/<USERNAME>/<USERNAME>.github.io/settings/pages`). Under "Build and deployment", set the "Source" to **GitHub Actions**.
+
+5.  **Automatic Deployment:**
+    Now, whenever you push changes (like new posts or theme updates) to your `master` (or `main`) branch, the GitHub Action will automatically run, build your Hugo site, and deploy the contents of the `public` directory to `https://<USERNAME>.github.io`. You can monitor the progress in the "Actions" tab of your repository.
