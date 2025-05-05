@@ -1,0 +1,117 @@
+baseurl = "https://at8865.github.io/"
+title = "André Carlo Tipping"
+
+theme = "hugo-coder"
+
+languagecode = "en"
+defaultcontentlanguage = "en"
+
+paginate = 20
+canonifyurls = true
+
+pygmentsstyle = "b2"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+disqusShortname = "atipping"
+
+[params]
+    author = "André Carlo Tipping"
+    description = "André's personal website"
+    keywords = "blog,developer,personal"
+    info = "Analyst | Engineer"
+    avatarurl = "images/avatar.jpg"
+    footercontent = "Place to organise my projects and thoughts."
+
+    dateformat = "January 2, 2006"
+
+    hideCredits = false
+    hideCopyright = false
+
+    rtl = false
+
+    # Use inverted colors
+    inverted = false
+
+    # Series see also post count
+    maxSeeAlsoItems = 5
+
+    # Custom CSS
+    custom_css = []
+
+    # Custom JS
+    custom_js = []
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+
+[[params.social]]
+    name = "Github"
+    icon = "fab fa-github"
+    weight = 1
+    url = "https://github.com/dre-pace"
+[[params.social]]
+    name = "LinkedIn"
+    icon = "fab fa-linkedin"
+    weight = 2
+    url = "http://linkedin.com/in/andre-carlo-tipping-61109547/"
+[[params.social]]
+    name = "Email"
+    icon = "far fa-envelope"
+    weight = 3
+    url = "mailto:at8865@my.bristol.ac.uk"
+
+
+
+[languages]
+    [languages.en]
+        languagename = "English"
+
+        [languages.en.menu]
+
+            [[languages.en.menu.main]]
+            name = "About"
+            weight = 1
+            url = "about/"
+
+            [[languages.en.menu.main]]
+            name = "Blog"
+            weight = 2
+            url = "posts/"
+
+            [[languages.en.menu.main]]
+            name = "Projects"
+            weight = 3
+            url = "projects/"
+
+
+
+    [languages.pt-br]
+        languagename = "Português"
+        title = "André Tipping"
+
+        [languages.pt-br.params]
+            author = "André Carlo Tipping"
+            info = "Analista | Engenheiro"
+            description = "Sítio pessoal de André"
+            keywords = "blog,desenvolvedor,pessoal"
+            footercontent = "Local para organizar os meus projetos e pensamentos."
+
+        [languages.pt-br.menu]
+
+            [[languages.pt-br.menu.main]]
+            name = "Sobre"
+            weight = 1
+            url = "about/"
+
+            [[languages.pt-br.menu.main]]
+            name = "Blog"
+            weight = 2
+            url = "posts/"
+
+            [[languages.pt-br.menu.main]]
+            name = "Projetos"
+            weight = 3
+            url = "projects/"
