@@ -1,4 +1,3 @@
-baseurl = "https://at8865.github.io/"
 title = "André Carlo Tipping"
 
 theme = "coder"
@@ -7,7 +6,7 @@ languagecode = "en"
 defaultcontentlanguage = "en"
 
 paginate = 20
-canonifyurls = true
+canonifyurls = false
 
 pygmentsstyle = "b2"
 pygmentscodefences = true
