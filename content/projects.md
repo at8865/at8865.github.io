@@ -3,6 +3,9 @@ title = 'Projects'
 date = 2025-05-05T18:02:44+01:00
 draft = false
 +++
+## * Strategy to Fix Slow Queries:
+[/posts/strategy-fix-slow-queries/](/posts/strategy-fix-slow-queries/)
+A comprehensive case study analysing database performance issues using Snowflake query history data. Investigation of slow query root causes and strategic solutions to improve end-user experience while optimizing costs. Includes systematic analysis of query performance metrics, warehouse utilization, and data access patterns.
 ## * Data Science Capstone Text Predictor: 
 http://rpubs.com/TheLoneBrit101/503450
 Capstone of Data Science Specialization by John Hopkins University via Coursera sponsored by Swiftkey
