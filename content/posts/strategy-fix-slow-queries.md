@@ -1,6 +1,6 @@
 +++
 draft = false
-date = 2025-01-27T10:00:00+00:00
+date = 2025-08-25T10:00:00+00:00
 title = "Strategy to Fix Slow Queries: A Data Performance Case Study"
 description = "Analysis and solutions for database query performance issues using Snowflake query history data"
 slug = "strategy-fix-slow-queries"
