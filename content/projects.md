@@ -1,8 +1,14 @@
 +++
 title = 'Projects'
-date = 2025-05-05T18:02:44+01:00
+date = 2025-05-05T18:02:05+01:00
 draft = false
 +++
+## * Global Recovery Analysis:
+https://dre-at8865.github.io/global_recovery_analysis/
+Analysis of the drivers of economic crisis recovery across countries since 1980. The dashboard explores the central question: What separates countries that recover from crisis in 2 years from those that stagnate for decades? Data: [Global Macro Database](https://www.globalmacrodata.com/)
+## * Subscription Analytics dbt Project:
+https://github.com/dre-at8865/subscription-analytics-dbt
+An example of a dbt project modeling and analysing membership, subscription, invoice, refund, and season data for a subscription-based business.
 ## * Strategy to Fix Slow Queries:
 [/posts/strategy-fix-slow-queries/](/posts/strategy-fix-slow-queries/)
 A comprehensive case study analysing database performance issues using Snowflake query history data. Investigation of slow query root causes and strategic solutions to improve end-user experience while optimizing costs. Includes systematic analysis of query performance metrics, warehouse utilization, and data access patterns.
