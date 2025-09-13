@@ -11,7 +11,7 @@ externalLink = ""
 series = []
 +++
 
-This project presents a comprehensive analysis of database performance issues and strategic solutions to improve query execution times for data consumers across an organisation.
+This project presents a comprehensive analysis of database performance issues and strategic solutions to improve query execution times for data consumers across an orga nisation.
 
 ## Project Overview
 
